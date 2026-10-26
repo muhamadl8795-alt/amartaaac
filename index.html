@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CV – Muhammad Lutfi Amarta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --indigo: #1c2766;
+    --indigo-deep: #121a47;
+    --paper: #f4f5fb;
+    --card: #ffffff;
+    --ink: #1b2038;
+    --muted: #5a6285;
+    --gold: #e0a526;
+    --line: #d9dcee;
+    --serif: "Fraunces", Georgia, "Times New Roman", serif;
+    --sans: "Nunito Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #0e1233; --card: #171d4a; --ink: #eceefa; --muted: #a9b0d6; --line: #2c3470;
+      --indigo: #8f9cff; --indigo-deep: #0a0d27;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #0e1233; --card: #171d4a; --ink: #eceefa; --muted: #a9b0d6; --line: #2c3470;
+    --indigo: #8f9cff; --indigo-deep: #0a0d27;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: var(--sans); line-height: 1.65; font-size: 1rem;
+  }
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+
+  /* Kepala: motif kawung (batik klasik Yogyakarta) */
+  header.hero {
+    background-color: var(--indigo-deep);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%23e0a526' stroke-opacity='.35' stroke-width='1.2'%3E%3Cellipse cx='28' cy='14' rx='7' ry='14'/%3E%3Cellipse cx='28' cy='42' rx='7' ry='14'/%3E%3Cellipse cx='14' cy='28' rx='14' ry='7'/%3E%3Cellipse cx='42' cy='28' rx='14' ry='7'/%3E%3C/g%3E%3C/svg%3E");
+    color: #fff; padding: 4.5rem 1.5rem 5rem; position: relative;
+  }
+  header.hero::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 10px;
+    background: repeating-linear-gradient(90deg, var(--gold) 0 18px, transparent 18px 30px);
+  }
+  .hero-inner { max-width: 1040px; margin: 0 auto; }
+  .hero h1 {
+    font-family: var(--serif); font-weight: 800; letter-spacing: -0.02em;
+    font-size: clamp(2.4rem, 7vw, 4.8rem); line-height: 1.02; margin: 0 0 .6rem;
+  }
+  .hero p.role { font-size: 1.15rem; margin: 0; max-width: 34rem; color: #d7dbf5; }
+  .theme-btn {
+    position: absolute; top: 1rem; right: 1rem; background: transparent; color: #fff;
+    border: 1px solid rgba(255,255,255,.45); border-radius: 999px; padding: .35rem .9rem;
+    font: inherit; font-size: .85rem; cursor: pointer;
+  }
+  .theme-btn:hover { background: rgba(255,255,255,.12); }
+
+  /* Tata letak */
+  .wrap {
+    max-width: 1040px; margin: -3rem auto 3rem; padding: 0 1.5rem;
+    position: relative; z-index: 1; /* supaya kartu tidak tertutup header */
+    display: grid; grid-template-columns: 290px 1fr; gap: 1.75rem; align-items: start;
+  }
+  aside.side { position: sticky; top: 1rem; }
+  .panel {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    padding: 1.5rem;
+  }
+  .photo {
+    width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 10px;
+    border: 4px solid var(--gold); display: block; margin-bottom: 1.1rem; background: #fff;
+  }
+  h2 {
+    font-family: var(--serif); font-weight: 600; color: var(--indigo);
+    font-size: 1.55rem; margin: 0 0 .75rem; letter-spacing: -0.01em;
+  }
+  h3 { font-family: var(--serif); font-size: 1.05rem; margin: 0 0 .5rem; color: var(--indigo); }
+  main section { margin-bottom: 1.5rem; }
+  main section p { margin: 0 0 .8rem; max-width: 68ch; }
+  main section p:last-child { margin-bottom: 0; }
+
+  .contact { list-style: none; margin: 0; padding: 0; display: grid; gap: .55rem; }
+  .contact li { display: flex; gap: .6rem; align-items: baseline; font-size: .95rem; word-break: break-word; }
+  .contact b { min-width: 4.2rem; color: var(--muted); font-weight: 600; font-size: .85rem; }
+  .contact a { text-decoration-color: var(--gold); text-underline-offset: 3px; }
+  .contact a:hover { color: var(--indigo); text-decoration-thickness: 2px; }
+
+  /* Cita-cita: daftar bertahap */
+  .goals { margin: 0; padding: 0; list-style: none; border-left: 3px solid var(--gold); }
+  .goals li { padding: .25rem 0 .9rem 1.1rem; position: relative; }
+  .goals li::before {
+    content: ""; position: absolute; left: -9px; top: .55rem; width: 15px; height: 15px;
+    border-radius: 50%; background: var(--card); border: 3px solid var(--indigo);
+  }
+  .goals strong { display: block; color: var(--indigo); font-family: var(--serif); }
+
+  /* Pandangan hidup */
+  blockquote {
+    margin: 0 0 1rem; padding: 1.1rem 1.3rem; background: var(--indigo-deep); color: #fff;
+    border-radius: 10px; font-family: var(--serif); font-size: 1.25rem; line-height: 1.4;
+  }
+
+  table { width: 100%; border-collapse: collapse; font-size: .95rem; }
+  caption { text-align: left; color: var(--muted); font-size: .85rem; padding-bottom: .5rem; }
+  th, td { text-align: left; padding: .65rem .7rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+  thead th { background: var(--indigo-deep); color: #fff; font-weight: 600; }
+  thead th:first-child { border-top-left-radius: 8px; }
+  thead th:last-child { border-top-right-radius: 8px; }
+  tbody tr:hover { background: color-mix(in srgb, var(--gold) 12%, transparent); }
+  .scroll { overflow-x: auto; }
+
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  ul.plain { margin: 0; padding-left: 1.2rem; }
+  ul.plain li { margin-bottom: .3rem; }
+  ul.plain li::marker { color: var(--gold); }
+
+  .bar { height: 8px; background: var(--line); border-radius: 99px; overflow: hidden; margin-top: .25rem; }
+  .bar span { display: block; height: 100%; background: var(--gold); border-radius: 99px; }
+  .skill { margin-bottom: .8rem; font-size: .95rem; display: flex; justify-content: space-between; flex-wrap: wrap; }
+  .skill .bar { flex-basis: 100%; }
+
+  .socials { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }
+  .socials a {
+    text-decoration: none; font-size: .88rem; font-weight: 700; padding: .4rem .85rem;
+    border-radius: 999px; background: var(--indigo-deep); color: #fff;
+  }
+  .socials a:hover { background: var(--gold); color: #1b1400; }
+
+  footer { text-align: center; color: var(--muted); font-size: .85rem; padding: 0 1rem 2.5rem; }
+
+  @media (max-width: 820px) {
+    .wrap { grid-template-columns: 1fr; margin-top: -2.5rem; }
+    aside.side { position: static; }
+    .cols { grid-template-columns: 1fr; }
+    .photo { max-width: 260px; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <button class="theme-btn" id="themeBtn" type="button" aria-label="Ganti tema terang atau gelap">Ganti tema</button>
+  <div class="hero-inner">
+    <!-- GANTI: nama lengkap kamu -->
+    <h1>Muhammad Lutfi Amarta</h1>
+    <p class="role">Pelajar yang suka Mieayam, kopi hitam, dan belajar hal baru dari dunia IT.</p>
+  </div>
+</header>
+
+<div class="wrap">
+  <!-- Kolom kiri: foto + kontak -->
+  <aside class="side">
+    <div class="panel">
+      <!-- GANTI: taruh foto kamu di folder yang sama dengan nama foto.jpg. Jika belum ada, gambar bawaan akan tampil. -->
+      <img class="photo" src="lutfi.jpeg" alt="Foto profil Nama Lengkap Kamu"
+        onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 200 200%27%3E%3Crect width=%27200%27 height=%27200%27 fill=%27%23e9ebf8%27/%3E%3Ccircle cx=%27100%27 cy=%2780%27 r=%2742%27 fill=%27%231c2766%27/%3E%3Cpath d=%27M20 200c0-46 36-76 80-76s80 30 80 76z%27 fill=%27%231c2766%27/%3E%3Ccircle cx=%27100%27 cy=%2780%27 r=%2742%27 fill=%27none%27 stroke=%27%23e0a526%27 stroke-width=%273%27/%3E%3C/svg%3E'">
+      <h2>Kontak</h2>
+      <ul class="contact">
+        <li><b>Email</b> <a href="mailto:muhamadl8795@gmail.com">muhamadl8795@gmail.com</a></li>
+        <li><b>Telepon</b> <a href="https://wa.me/6282138026244">0821-3802-6244</a></li>
+        <li><b>Alamat</b> <span>Sleman, Indonesia</span></li>
+        <li><b>GitHub</b> <a href="https://github.com/muhamadl8795-alt" target="_blank" rel="noopener">github.com/usernamekamu</a></li>
+      </ul>
+      <div class="socials">
+        <a href="https://instagram.com/lutfiamartaaa" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/in/muhammad-lutfi-amarta-4861a6447?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.tiktok.com/@mbohhsopoh_?_r=1&_t=ZS-9AsFKIgK1eD" target="_blank" rel="noopener">TikTok</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Kolom kanan: isi -->
+  <main>
+    <section class="panel" id="profil">
+      <h2>Profil</h2>
+      <p>Halo, saya <strong>Muhammad Lutfi Amarta</strong>, lahir di Sleman pada 5 Januari 2007. Saya anak pertama dari tiga bersaudara dan tumbuh di kota yang mengajarkan bahwa hal sederhana bisa punya makna dalam.</p>
+      <p>Saya senang membuat sesuatu dari nol: menulis kode, merancang tampilan, atau sekadar menata ide di buku catatan. Saya mudah penasaran, terbiasa bekerja dalam tim, dan Mengetahui hal baru.</p>
+    </section>
+
+    <section class="panel" id="cita-cita">
+      <h2>Cita-cita</h2>
+      <ol class="goals">
+        <li><strong>Jangka pendek</strong>Lulus dengan nilai baik dan menguasai dasar pemrograman web.</li>
+        <li><strong>Jangka menengah</strong>Kuliah di jurusan Teknologi Informasi dan Belajar bareng teman teman.</li>
+        <li><strong>Jangka panjang</strong>Menjadi pengembang perangkat lunak yang membuat aplikasi bermanfaat untuk pendidikan di daerah bahkan internasional.</li>
+      </ol>
+    </section>
+
+    <section class="panel" id="pandangan-hidup">
+      <h2>Pandangan hidup</h2>
+      <blockquote>“Hidup itu seperti belajar naik sepeda: jatuh itu wajar, berhenti yang tidak boleh.”</blockquote>
+      <p>Saya percaya bahwa proses lebih penting daripada hasil instan. Kejujuran, kerja keras, dan sikap saling menghargai adalah bekal yang tidak lekang oleh zaman. Prinsip “<em>alon-alon waton kelakon</em>” mengingatkan saya untuk tetap tenang dan konsisten, bukan terburu-buru.</p>
+    </section>
+
+    <section class="panel" id="pendidikan">
+      <h2>Pendidikan</h2>
+      <div class="scroll">
+        <table>
+          <caption>Riwayat pendidikan formal</caption>
+          <thead>
+            <tr><th>Tahun</th><th>Sekolah</th><th>Keterangan</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>2026 – sekarang</td><td>STMIK El Rahma Yogyakarta</td><td>Masih Aktif</td></tr>
+            <tr><td>2022 – 2026</td><td>SMK Negeri 2 Depok</td><td>Lulus</td></tr>
+            <tr><td>2019 – 2022</td><td>SMP Angkasa Adisucipto</td><td>Lulus</td></tr>
+            <tr><td>2013 – 2019</td><td>SD Negeri Kledokan</td><td>Lulus dengan predikat baik</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel" id="keahlian">
+      <h2>Hobi dan Organisasi</h2>
+      <div class="cols">
+       
+        <div>
+          <h3>Hobi</h3>
+          <ul class="plain">
+            <li>Billiard</li>
+            <li>Kulineran</li>
+            <li>Badminton</li>
+            <li>Beryanyi</li>
+          </ul>
+          <h3 style="margin-top:1.1rem">Organisasi</h3>
+          <ul class="plain">
+            <li>STEMBAYO Mania</li>
+            <li>Pemuda Pemudi Rukun Tetangga</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer>
+  Dibuat dengan HTML dan CSS · Yogyakarta, 2026 · <a href="#profil">Kembali ke atas</a>
+</footer>
+
+<script>
+  // Tombol ganti tema terang/gelap
+  (function () {
+    var root = document.documentElement;
+    var btn = document.getElementById("themeBtn");
+    btn.addEventListener("click", function () {
+      var dark = root.getAttribute("data-theme") === "dark" ||
+        (!root.getAttribute("data-theme") && window.matchMedia("(prefers-color-scheme: dark)").matches);
+      root.setAttribute("data-theme", dark ? "light" : "dark");
+    });
+  })();
+</script>
+</body>
+</html>
